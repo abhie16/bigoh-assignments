@@ -24,7 +24,7 @@ class Solution{
         while(num>0){
             int dig = num % 10;
             num = num / 10;
-
+            
             if(dig != 2 && dig != 3 && dig != 5 && dig != 7){
                 return false;
             }

@@ -18,13 +18,13 @@ class Solution{
             return;
         }
 
-        int last_digit = num % 10;
-        num = num / 10;
+        int last_digit = num % 10;  //  5678 -> 8
+        num = num / 10; // 5678 -> 567
 
-        int first_digit = num / (int) (Math.pow(10, len - 2));
-        num = num % (int) (Math.pow(10, len - 2));
+        int first_digit = num / (int) (Math.pow(10, len - 2));  //  567 -> 5
+        num = num % (int) (Math.pow(10, len - 2)); // 567 -> 67
 
-        num =  last_digit * (int)Math.pow(10, len - 1) + (num * 10 + first_digit);
+        num =  last_digit * (int)Math.pow(10, len - 1) + (num * 10 + first_digit);  // 8(last-digit) * 1000 + 67 * 10 + 5(first_digit)  -> 8675
 
         System.out.println(num);
         

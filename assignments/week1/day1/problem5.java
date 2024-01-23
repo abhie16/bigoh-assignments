@@ -10,7 +10,7 @@ class Solution{
         long n = scn.nextLong();
 
         long ans = 1;
-        for(long i = 2; i<n; i++){
+        for(long i = 2; i<=n; i++){
             ans = lcm(ans, i);
         }
 
