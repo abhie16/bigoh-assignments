@@ -17,7 +17,6 @@ class problem2{
     public static void main(String[] args){
 
         Scanner scn = new Scanner(System.in);
-
         ArrayUtils arrayObj = new ArrayUtils();
      
         // input array
@@ -28,8 +27,12 @@ class problem2{
         // triplet of target sum
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         ArrayList<Integer> sublist = new ArrayList<>();
+
+        // method to generate triplets
         targetSumTriplets(nums, target, result, sublist, 0);
 
+
+        // print triplest
         for(ArrayList<Integer> triplets : result){
             System.out.print("( ");
             for(int i=0; i<triplets.size(); i++){
@@ -49,9 +52,9 @@ class problem2{
         if(sublist.size() > 3) return;
 
         
-            sublist.add(num[i]);
+            sublist.add(num[i]); // taking the element
             targetSumTriplets(num, target - num[i], result, sublist, i+1);
-            sublist.remove(sublist.size()-1);
+            sublist.remove(sublist.size()-1); // not taking the elemnent
             targetSumTriplets(num, target, result, sublist, i+1);
 
     } 

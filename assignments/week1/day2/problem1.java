@@ -28,7 +28,26 @@ import java.util.HashMap;
 
     }
 
-    // O(n)
+
+    // using arraylist
+    public static int[] removeDuplicatesUsingList(int[] values){
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        for(int i=0; i<values.length; i++){
+            if(!list.contains(values[i])){
+                list.add(values[i]);
+            }
+        }
+
+        int[] uniqueValue = new int[list.size()];
+        for(int i=0; i<uniqueValue.length; i++){
+            uniqueValue[i] = list.get(i);
+        }
+
+        return uniqueValue;
+    }
+
+    // using hashmap
     public static int[] removeDuplicates(int[] values){
         HashMap<Integer, Integer> mapOfValues = new HashMap<>();
 
@@ -45,23 +64,6 @@ import java.util.HashMap;
             uniqueValue[index++] = value;
         }
 
-
-        return uniqueValue;
-    }
-
-    public static int[] removeDuplicatesUsingList(int[] values){
-        ArrayList<Integer> list = new ArrayList<>();
-        
-        for(int i=0; i<values.length; i++){
-            if(!list.contains(values[i])){
-                list.add(values[i]);
-            }
-        }
-
-        int[] uniqueValue = new int[list.size()];
-        for(int i=0; i<uniqueValue.length; i++){
-            uniqueValue[i] = list.get(i);
-        }
 
         return uniqueValue;
     }

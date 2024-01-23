@@ -20,13 +20,13 @@ class problem3{
     }
 
     public static void printPattern(int n){
-        int posForwardSlash = n+1;
-        int posBackSlash = 0;
+        int posForwardSlash = n+1; // track position of forward slash
+        int posBackSlash = 0;  // traack position of backward slash
 
         // upper half of pattern
         for(int i=0; i<n/2+1; i++){
 
-            // n+2 because it contains n start + 2 slash
+            // n+2 iteration because it contains n star + 2 slash
             for(int j=0; j<n+2; j++){
                 if(j==posBackSlash){
                     System.out.print(" \\ ");
@@ -61,7 +61,7 @@ class problem3{
         posBackSlash = n/2+2;
         for(int i=0; i<n/2+1; i++){
 
-            // n+2 because it contains n start + 2 slash
+            // n+2 iteration because it contains n star + 2 slash
             for(int j=0; j<n+2; j++){
                 if(j==posForwardSlash){
                     System.out.print(" / ");
