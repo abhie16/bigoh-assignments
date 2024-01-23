@@ -40,17 +40,19 @@ class problem2{
         }
     }
 
-    public static void targetSumTriplets(int[] num, int target, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> sublist, int index){
+    public static void targetSumTriplets(int[] num, int target, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> sublist, int i){
+        if(i>=num.length) return;
         if(target == 0 && sublist.size() == 3){
             result.add(new ArrayList<>(sublist));
             return;
         }
         if(sublist.size() > 3) return;
 
-        for(int i=index; i<num.length; i++){
+        
             sublist.add(num[i]);
-            targetSumTriplets(num, target - num[i], result, sublist, i);
+            targetSumTriplets(num, target - num[i], result, sublist, i+1);
             sublist.remove(sublist.size()-1);
-        }
+            targetSumTriplets(num, target, result, sublist, i+1);
+
     } 
  }
