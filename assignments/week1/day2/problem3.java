@@ -29,13 +29,13 @@ class problem3{
             // n+2 iteration because it contains n star + 2 slash
             for(int j=0; j<n+2; j++){
                 if(j==posBackSlash){
-                    System.out.print(" \\ ");
+                    System.out.print("\\");
                     
                 }
                 else if(j!=posBackSlash && j!=posForwardSlash)
-                    System.out.print(" * ");
+                    System.out.print("*");
                 if(j==posForwardSlash){
-                    System.out.print(" / ");
+                    System.out.print("/");
                    
                 }
             }
@@ -48,11 +48,11 @@ class problem3{
 
         // for middle line of row 
         for(int i=0; i<n/2+1; i++){
-            System.out.print(" * ");
+            System.out.print("*");
         }
-        System.out.print(" \\ ");
+        System.out.print("\\");
         for(int i=0; i<n/2+1; i++){
-            System.out.print(" * ");
+            System.out.print("*");
         }
         System.out.println();
 
@@ -64,12 +64,12 @@ class problem3{
             // n+2 iteration because it contains n star + 2 slash
             for(int j=0; j<n+2; j++){
                 if(j==posForwardSlash){
-                    System.out.print(" / ");
+                    System.out.print("/");
                 }
                 else if(j!=posBackSlash && j!=posForwardSlash)
-                    System.out.print(" * ");
+                    System.out.print("*");
                 if(j==posBackSlash){
-                    System.out.print(" \\ ");
+                    System.out.print("\\");
                 }
             }
             posBackSlash++;
