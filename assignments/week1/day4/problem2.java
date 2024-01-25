@@ -10,37 +10,79 @@
     Output : [ZBU, ZBP, ZOU, ZOP, YBU, YBP, YOU, YOP, ABU, ABP, AOU, AOP, LU, LP]
  */
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
 class ProblemTwo{
+
+    // DESCRIPTION : main method
     public static void main(String[] args) {
-        HashMap<Integer, char[]> valueMap = new HashMap<>();
-        valueMap.put(1,new char[]{'Z', 'Y', 'A'});
-        valueMap.put(2,new char[]{'B', 'O'});
-        valueMap.put(12,new char[]{'L'});
-        valueMap.put(3,new char[]{'U', 'P'});
+        HashMap<String, char[]> valueMap = new HashMap<>();
+        valueMap.put("1",new char[]{'Z', 'Y', 'A'});
+        valueMap.put("2",new char[]{'B', 'O'});
+        valueMap.put("12",new char[]{'L'});
+        valueMap.put("3",new char[]{'U', 'P'});
 
         Scanner scn = new Scanner(System.in);
-        int input = scn.nextInt();
+        String inputStr = scn.next();
 
-        helper(input, valueMap, new StringBuilder());
-    }
+        ArrayList<String> result = new ArrayList<String>();
 
-    public static void helper(int input, HashMap<Integer, char[]> valueMap, StringBuilder pattern){
-        if(input == 0){
-            System.out.print(pattern + " ");
-            return;
+        ArrayList<ArrayList<String>> possibleCombination = new ArrayList<>();
+        ArrayList<String> sepcialCombo = new ArrayList<>();
+        ArrayList<String> eachDigitCombo = new ArrayList<>();
+
+
+        // Generate key from the given input
+        for(int i=0; i<inputStr.length(); i++){
+            eachDigitCombo.add(inputStr.charAt(i) + "");          
         }
-        else{
-            int key = input%10;
-            input = input/10;
 
-            char[] letters = valueMap.get(key);
-            for(int i=0; i<letters.length; i++){
-                pattern.append(letters[i]);
-                helper(input, valueMap, pattern);
+        
+        
+        for(int i=0; i<eachDigitCombo.size(); i++){
+            if(eachDigitCombo.get(i).equals("1") && i+1 < eachDigitCombo.size() && eachDigitCombo.get(i+1).equals("2")){
+                sepcialCombo.add("12");
+                i++;
+            }
+            else{
+                sepcialCombo.add(eachDigitCombo.get(i));
             }
         }
+        
+        possibleCombination.add(eachDigitCombo);
+        possibleCombination.add(sepcialCombo);
+
+        // Iterationg over all the possible set of keys from the given input String
+        for(ArrayList<String> keyCombo : possibleCombination){
+            generateLetterCombo(keyCombo, valueMap, new StringBuilder(),result, 0);
+        }
+
+        // Print all the combination generated
+        for(int i=0; i<result.size(); i++){
+            System.out.print(result.get(i)+" ");
+        }
+    }
+
+
+    /*
+     * MARK :- Generate letter combination from the given key and its value 
+     * INPUT :- ArrayList<String>, HashMap<String, char[]>, StringBuilder, ArrayList<String>, int
+     * OUTPUT :- void method
+     * DESCRIPTION :- Generate combination of letters assign to the given key using recursion
+     */
+    public static void generateLetterCombo(ArrayList<String> keys, HashMap<String, char[]> valueMap, StringBuilder pattern, ArrayList<String> result, int index){
+
+        if(index == keys.size()){
+            result.add(pattern.toString());
+            return;
+        }
+        for(int i=0; i<valueMap.get(keys.get(index)).length; i++){
+            pattern.append(valueMap.get(keys.get(index))[i]);
+            generateLetterCombo(keys, valueMap, pattern, result, index + 1);
+            pattern.deleteCharAt(pattern.length() - 1);
+        }
+        
     }
  }
