@@ -30,10 +30,12 @@
         }
     }
 
-    // MARK:- Rotate matrix 90 deg
-    // INPUT :- Integer 2d Array
-    // OUTPUT :- void method (swap columns)
-    // DESCRIPTION :- Rotate given matrix 90 deg by swapping vertically and diagonally
+    /*
+     * MARK :- Rotate matrix 90 deg
+     * INPUT :- Integer 2d Array
+     * OUTPUT :- void method (swap columns)
+     * DESCRIPTION :- Rotate given matrix 90 deg by swapping elements vertically and diagonally
+     */
     public static void rotateMatrix90degClockwise(int[][] matrix){
         
         // swap element up and down

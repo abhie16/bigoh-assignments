@@ -21,7 +21,7 @@
 
  public class ProblemFour {
     public static void main(String[] args) {
-        int[] height = {5,10};
+        int[] height = {7,2,3,4,5,6};
 
         System.out.println(mostWaterInContainer(height));
     }

@@ -11,6 +11,7 @@ A name is valid if following conditions are satisfied:
 import java.util.Scanner;
 
 class Solution{
+    // Main method
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the name: ");
@@ -18,6 +19,15 @@ class Solution{
         System.out.println(isNameValid(name));
     }
 
+    /*
+     * MARK :- Check if give string is valid or not 
+     * INPUT :- String name
+     * OUTPUT :- boolean
+     * DESCRIPTION :- This is used to check if given name is valid or not
+     *               A name is valid if following conditions are satisfied:
+     *                  - It does not contain any vowel more than once.
+     *                  - If the name contains two ‘S’, then there is not any ‘T’ in between them (both in capital cases).
+     */
     public static boolean isNameValid(String s){
         int[] letters = new int[26];
 

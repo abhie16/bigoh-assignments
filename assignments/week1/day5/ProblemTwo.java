@@ -6,7 +6,7 @@ package day5;
 
  class ProblemTwo{
     public static void main(String[] args) {
-        int[] nums1 = new int[]{1,4};
+        int[] nums1 = new int[]{1,4,5};
         int[] nums2 = new int[]{10,11,12};
 
         System.out.println(sortedArrMedian(nums1, nums2));

@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class ProblemThree {
     public static void main(String[] args) {
         int arr[] = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13}; 
-        int windowSize = 4;
+        int windowSize = 10;
 
         // list to store all max value of generated windows
         ArrayList<Integer> maxSlidingWindowList = new ArrayList<>();

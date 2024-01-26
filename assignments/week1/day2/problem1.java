@@ -8,9 +8,8 @@ result = [2, 4, 6, 8, 10, 12, 14]
  */
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
- class problem1{
+ class ProblemOne{
 
     
     public static void main(String[] args){
@@ -28,8 +27,12 @@ import java.util.HashMap;
 
     }
 
-
-    // using arraylist
+    /*
+     * MARK :- Remove duplicates from given array
+     * INPUT :- int[]
+     * OUTPUT :- int[] (new array without duplicates)
+     * DESCRIPTION :- Remove duplicates from given array using Arraylist.
+     */
     public static int[] removeDuplicatesUsingList(int[] values){
         ArrayList<Integer> list = new ArrayList<>();
         
@@ -43,27 +46,6 @@ import java.util.HashMap;
         for(int i=0; i<uniqueValue.length; i++){
             uniqueValue[i] = list.get(i);
         }
-
-        return uniqueValue;
-    }
-
-    // using hashmap
-    public static int[] removeDuplicates(int[] values){
-        HashMap<Integer, Integer> mapOfValues = new HashMap<>();
-
-        for(int i=0; i<values.length; i++){
-            if(!mapOfValues.containsKey(values[i])){
-                mapOfValues.put(values[i], 1);
-            }
-        }
-
-        int[] uniqueValue = new int[mapOfValues.size()];
-
-        int index = 0;
-        for(int value : mapOfValues.keySet()){
-            uniqueValue[index++] = value;
-        }
-
 
         return uniqueValue;
     }

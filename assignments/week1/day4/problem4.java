@@ -30,10 +30,12 @@
         System.out.println(numberOfIsland(grid));
     }
 
-    // MARK:-  Find number of islands
-    // INPUT :- Integer 2d Array
-    // OUTPUT :- int value
-    // DESCRIPTION :- Find all islands in the given matrix
+    /*
+     * MARK :- Find number of islands
+     * INPUT :- Integer 2d Array
+     * OUTPUT :- int value
+     * DESCRIPTION :- Find all islands in the given matrix
+     */
     public static int numberOfIsland(String[][] grid){
         int count = 0;
 
@@ -55,10 +57,12 @@
         return count;
     }
 
-    // MARK:- Mark all value that is visited
-    // INPUT :- Integer 2d Array, int , int
-    // OUTPUT :- void method 
-    // DESCRIPTION :- Mark visited land with 0 using recursion
+    /*
+     * MARK :- Mark all value that is visited
+     * INPUT :- Integer 2d Array, int , int
+     * OUTPUT :- void method 
+     * DESCRIPTION :- Mark visited land with 0 using recursion
+     */
     public static void visitConnectedLand(String[][] grid, int row, int col){
 
         // condition to check if row and col are in bound and value is 1

@@ -2,12 +2,22 @@ import java.util.Scanner;
 
 public class ArrayUtils {
 
+    /*
+     * MARK :- Print Element of given int array
+     * INPUT :- int[]
+     * OUTPUT :- void
+     */
     public void printArray(int [] arr){
         for(int i=0; i<arr.length; i++){
             System.out.print(arr[i] + " ");
         }
     }
 
+    /*
+     * MARK :- Take input for many number as a array
+     * INPUT :- Standard input of size of array
+     * OUTPUT :- int[]
+     */
     public int[] inputArray(){
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
@@ -21,10 +31,20 @@ public class ArrayUtils {
         return arr;
     }
 
+    /*
+     * MARK :- Sort given array
+     * INPUT :- int[]
+     * OUTPUT :- void
+     */
     public void sort(int[] arr){
         mergeSort(arr, 0, arr.length-1);
     }
 
+    /*
+     * MARK :- Sort given array using merge sort algo
+     * INPUT :- int[], int starting, int end of array
+     * OUTPUT :- void
+     */
     public void mergeSort(int[] arr, int low, int high){
         if(low >= high) return;
 
@@ -36,6 +56,12 @@ public class ArrayUtils {
         merge(arr,low,mid,high);
     }
 
+    /*
+     * MARK :- Merge method for merge sort
+     * INPUT :- int[], int low, int mid, int high
+     * OUTPUT :- void
+     * DESCRIPTION :- Sort array with given index bound
+     */
     public void merge(int[] arr, int low, int mid, int high){
         int l1 = mid - low + 1;
         int l2 = high - mid;

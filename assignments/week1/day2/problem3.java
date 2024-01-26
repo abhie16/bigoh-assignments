@@ -12,13 +12,18 @@
 
 import java.util.Scanner;
 
-class problem3{
+class ProblemThree{
     public static void main(String[] args){
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
         printPattern(n);
     }
 
+    /*
+     * MARK :- Print X pattern 
+     * INPUT :- int (number of stars)
+     * OUTPUT :- void
+     */
     public static void printPattern(int n){
         int posForwardSlash = n+1; // track position of forward slash
         int posBackSlash = 0;  // traack position of backward slash

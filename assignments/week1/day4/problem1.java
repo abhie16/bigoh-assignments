@@ -12,10 +12,12 @@
 
  class ProblemOne{
 
-    // MARK :- Print spiral matrix in clockwise
-    // INPUT :- Integer 2d Array
-    // OUTPUT :- void method (print matrix in clockwise)
-    // DESCRIPTION :- This method print matrix in clockwise.
+    /*
+    * MARK :- Print spiral matrix in clockwise
+    * INPUT :- Integer 2d Array
+    * OUTPUT :- void method (print matrix in clockwise)
+    * DESCRIPTION :- This method print matrix in clockwise.
+    */
     public static void printClockWise(int[][] matrix){
         int colStart = 0;
         int colEnd = matrix[0].length-1;
@@ -55,10 +57,12 @@
         
     }
 
-    // MARK :- Print spiral matrix in clockwise
-    // INPUT :- Integer 2d Array
-    // OUTPUT :- void method (print matrix in Anticlockwise)
-    // DESCRIPTION :- This method print matrix in Anticlockwise.
+    /*
+     * MARK :- Print spiral matrix in clockwise
+     * INPUT :- Integer 2d Array
+     * OUTPUT :- void method (print matrix in Anticlockwise)
+     * DESCRIPTION :- This method print matrix in Anticlockwise.
+     */
     public static void printAntiClockWise(int[][] matrix){
 
         // swap columns of the given matrix , so that printing clockwise gives same result as anticlockwise
@@ -68,10 +72,12 @@
         printClockWise(matrix);
     }
 
-    // MARK:- Swap Column into Matrix
-    // INPUT :- Integer 2d Array
-    // OUTPUT :- void method (swap columns)
-    // DESCRIPTION :- Swaping the columns values into the matrix.
+    /*
+     * MARK :- Swap Column into Matrix
+     * INPUT :- Integer 2d Array
+     * OUTPUT :- void method (swap columns)
+     * DESCRIPTION :- Swaping the columns values into the matrix.
+     */
     public static void swapColumnInMatrix(int[][] matrix){
         int colStart = 0;
         int colEnd = matrix[0].length-1;

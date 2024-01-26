@@ -17,6 +17,12 @@ class Solution{
         System.out.println(ans);
     }
 
+    /*
+     * MARK :- Calculate lcm of two given number
+     * INPUT :- long, long
+     * OUTPUT :- long
+     * DESCRIPTION :- Calculate lcm of two number.
+     */
     public static long lcm(long a, long b){
         long min = Math.min(a,b);
         long max = Math.max(a,b);

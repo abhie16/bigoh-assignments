@@ -13,7 +13,7 @@ result = [[1, 2, 3]]
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class problem2{
+class ProblemTwo{
     public static void main(String[] args){
 
         Scanner scn = new Scanner(System.in);
@@ -32,7 +32,7 @@ class problem2{
         targetSumTriplets(nums, target, result, sublist, 0);
 
 
-        // print triplest
+        // print triplets
         for(ArrayList<Integer> triplets : result){
             System.out.print("( ");
             for(int i=0; i<triplets.size(); i++){
@@ -43,6 +43,12 @@ class problem2{
         }
     }
 
+    /*
+     * MARK :- Generate all triplets , their sum equal to targetSum
+     * INPUT :- int[], int, ArrayList<ArrayList<Integer>>, ArrayList<integer>, int
+     * OUTPUT :- void
+     * DESCRIPTION :- Generate all triplet whose some is equal to given target using backtracking technique.
+     */
     public static void targetSumTriplets(int[] num, int target, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> sublist, int i){
         if(i>=num.length) return;
         if(target == 0 && sublist.size() == 3){

@@ -23,6 +23,12 @@ class Solution{
        
     }
 
+    /*
+     * MARK :- Check if given url is valid or not
+     * INPUT :- String URL
+     * OUTPUT :- boolean
+     * DESCRIPTION :- Check if given url is valid or not. It separate url in protocol and web address then check for protocols and web address are valid or not.
+     */
     public static boolean isValidURL(String url){
          String[] tokens = url.split("//");
          if(tokens.length <= 2) {

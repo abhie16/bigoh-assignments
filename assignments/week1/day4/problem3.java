@@ -23,10 +23,12 @@
         System.out.println(searchInMatrix(matrix,target));
     }
 
-    // MARK:- Search value into Matrix
-    // INPUT :- Integer 2d Array and target value
-    // OUTPUT :- boolean
-    // DESCRIPTION :- Search given target in 2d array using binary search
+    /*
+     * MARK :- Search value into Matrix
+     * INPUT :- Integer 2d Array and target value
+     * OUTPUT :- boolean
+     * DESCRIPTION :- Search given target in 2d array using binary search
+     */
     public static boolean searchInMatrix(int[][] matrix, int target){
         int row = matrix.length;
         int col = matrix[0].length;

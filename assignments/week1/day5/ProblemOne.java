@@ -21,8 +21,8 @@ package day5;
  class ProblemOne{
     // main method
     public static void main(String[] args) {
-        String str1 = "AB";
-        String str2 = "CD";
+        String str1 = "ABE";
+        String str2 = "CFD";
 
         printInterleavingStrings(str1,str2);
     }

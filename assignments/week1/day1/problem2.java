@@ -30,6 +30,12 @@ class Solution{
         
     }
 
+    /*
+     * MARK :- Find length of given Number
+     * INPUT :- int Number
+     * OUTPUT :- int length
+     * DESCRIPTION :- Find length of given number, it count each digit while taking mod with 10 and then dividing it by 10 while Number is not 0;
+     */
     public static int length(int num){
         int count = 0;
         while(num > 0){

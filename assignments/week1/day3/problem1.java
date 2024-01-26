@@ -34,7 +34,7 @@ Output: false
  */
 
 
-class problem1{
+class ProblemOne{
     public static void main(String[] args) {
         String[][] sudoku = {
          {"5","3",".",".","7",".",".",".","."}
@@ -65,7 +65,12 @@ class problem1{
         return true;
     }
 
-    // method to check if given value is in correct position in sudoku or not
+    /*
+     * MARK :- Check position of given element of sudoku
+     * INPUT :- String[][], int, int, String
+     * OUTPUT :- boolean
+     * DESCRIPTION :- Check if given value of sudoku is its correct position or not using a single for loop 
+     */
     public static boolean isValid(String[][] sudoku, int row, int col, String value){
         
         for(int i=0; i<9; i++){

@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 class ProblemTwo{
 
-    // DESCRIPTION : main method
+    // MARK : main method
     public static void main(String[] args) {
         HashMap<String, char[]> valueMap = new HashMap<>();
         valueMap.put("1",new char[]{'Z', 'Y', 'A'});
