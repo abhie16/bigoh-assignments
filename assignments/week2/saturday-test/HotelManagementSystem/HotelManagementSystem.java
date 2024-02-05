@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 /**
  * MARK :- Hotel management system class
@@ -7,9 +6,9 @@ import java.util.ArrayList;
 
 public class HotelManagementSystem {
     
-    // store hotel added by agent
-    public ArrayList<Hotel> unVerifiedHotel;
-
+    private HotelMangement hotelMangement;
+    private UserMangement userMangement;
+    
     // use to stor single instance of hotel mangement system ( singletong design ) as hotel system can be only one for all type of users.
     private static HotelManagementSystem instanceOfHotelManagementSystem = null;
 
@@ -17,7 +16,8 @@ public class HotelManagementSystem {
 
     // making constructor private to strict making more then one object of the hotel management system
     private HotelManagementSystem(){
-        unVerifiedHotel = new ArrayList<>();
+        hotelMangement = new HotelMangement();
+        userMangement = new UserMangement();
         db = HotelDatabase.getInstanceOfDB(); // get instance of db
     }
     
@@ -28,51 +28,54 @@ public class HotelManagementSystem {
         }
         return instanceOfHotelManagementSystem;
     }
-
-    // add and delete user form db
-    public void addUser(String email, String name){
-        db.addUser(email, name);
-    }
-    public void deleteUser(User user){
-        db.deleteUser(user);
+    
+    // get user management instance
+    public UserMangement getUserMangement(){
+        return userMangement;
     }
 
-    // add hotel for agent 
-    public void addHotel(Hotel hotel){
-        unVerifiedHotel.add(hotel);
-    }
-    // add and delete hotel from db
-    public void addHotelToDB(Hotel hotel){
-        db.addHotel(hotel);
-    }
-    public void deleteHotel(Hotel hotel){
-        db.deleteHotel(hotel);
+    // get hotel management instance
+    public HotelMangement getHotelMangement(){
+        return hotelMangement;
     }
     
     // search hotel on basis of name and location entered by user into db
     public void search(String nameOfHotel, String locationOfHotel){
-        for(String hotelName : db.hotelList.keySet()){
-            if(hotelName.equals(nameOfHotel)){
-                db.hotelList.get(nameOfHotel).showHotel();
-            }
-            if(db.hotelList.get(hotelName).getLocation().equals(locationOfHotel)){
-                db.hotelList.get(hotelName).showHotel();
-            }
-        }
+        db.search(nameOfHotel, locationOfHotel);
+    }
+
+    // verify hotel, save all hotel to db which is not verified
+    public void verifyHotels(){
+        hotelMangement.verifyHotels();
     }
 
     // book hotel of given name , location and number of rooms to book
     public Hotel bookHotel(String nameOfHotel, String locationOfHotel, int rooms){
-        if(db.hotelList.containsKey(nameOfHotel)){
-            // check if room successfully booked
-            if(db.hotelList.get(nameOfHotel).bookRooms(rooms)){
-                return db.hotelList.get(nameOfHotel); // return hotel in which room is booked , here we can also use hotelID by adding them into hotel class
-            }
-            return null;
-        }
-        else{
-            System.out.println("Hotel does not exist");
-            return null;
-        }
+        return hotelMangement.bookHotel(nameOfHotel, locationOfHotel, rooms);
+    }
+
+    // add hotel to db
+    public void addHotel(Hotel hotel){
+        hotelMangement.addHotel(hotel);
+    }
+
+    // delete hotel from db
+    public void deleteHotel(Hotel hotel){
+        hotelMangement.deleteHotel(hotel);
+    }
+
+    // update hotel details
+    public void updateHotel(Hotel hotel){
+        hotelMangement.addHotel(hotel);
+    }
+
+    // delete user from db
+    public void deleteUser(User user){
+        userMangement.deleteUser(user);
+    }
+
+    // add user to db
+    public void addUser(String email, String name){
+        userMangement.addUser(email, name);
     }
 }

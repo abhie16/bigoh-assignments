@@ -14,7 +14,7 @@ public class User {
     private String email;
 
     // store instance of hotel mangement system
-    private HotelManagementSystem system;
+    public HotelManagementSystem system;
 
     public User(String name){
         scn = new Scanner(System.in);

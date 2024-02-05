@@ -3,20 +3,15 @@
  * DESC :- This admin class have functionality like verifying hotel added by agent, deleting users, deleting hotel.
  */
 
-public class Admin{
-    
-    // store instance of hotel mangement system
-    private HotelManagementSystem system;
+public class Admin extends User{
 
-    public Admin(){
-        system = HotelManagementSystem.getInstance(); // single instance of hotel
+    public Admin(String name){
+        super(name);
     }
 
-    // verify hotel, save all hotel to db which is not verified
-    public void verifyHotels(){
-        for(Hotel hotel : system.unVerifiedHotel){
-            system.addHotelToDB(hotel);
-        }
+    // verify hotel added by agent
+    public void verifyHotel(Hotel hotel){
+        system.verifyHotels();
     }
 
     // delete users from the db

@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class HotelDatabase {
 
-    public HashMap<String, Hotel> hotelList;
+    private HashMap<String, Hotel> hotelList;
     private HashMap<String,String> userList;
 
     // use to store single instance of database ( singletong design ) as database can be only one.
@@ -25,6 +25,33 @@ public class HotelDatabase {
             instanceOfDB = new HotelDatabase();
         }
         return instanceOfDB;
+    }
+
+    // search hotel on basis of name and location entered by user into db
+    public void search(String nameOfHotel, String locationOfHotel){
+        for(String hotelName : hotelList.keySet()){
+            if(hotelName.equals(nameOfHotel)){
+                hotelList.get(nameOfHotel).showHotel();
+            }
+            if(hotelList.get(hotelName).getLocation().equals(locationOfHotel)){
+                hotelList.get(hotelName).showHotel();
+            }
+        }
+    }
+
+    // book hotel of given name , location and number of rooms to book
+    public Hotel bookHotel(String nameOfHotel, String locationOfHotel, int rooms){
+        if(hotelList.containsKey(nameOfHotel)){
+            // check if room successfully booked
+            if(hotelList.get(nameOfHotel).bookRooms(rooms)){
+                return hotelList.get(nameOfHotel); // return hotel in which room is booked , here we can also use hotelID by adding them into hotel class
+            }
+            return null;
+        }
+        else{
+            System.out.println("Hotel does not exist");
+            return null;
+        }
     }
 
     // add user to db

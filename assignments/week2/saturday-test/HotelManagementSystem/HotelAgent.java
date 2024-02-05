@@ -5,13 +5,9 @@
 
 public class HotelAgent extends User {
 
-    // store instance of hotel mangement system
-    private HotelManagementSystem system;
-
     // constructor to set name;
     public HotelAgent(String name){
         super(name);
-        system = HotelManagementSystem.getInstance(); // single instance
     }
 
     // add hotel
@@ -21,7 +17,7 @@ public class HotelAgent extends User {
 
     // update hotel
     public void updateHotel(Hotel hotel){
-        system.addHotel(hotel);
+        system.updateHotel(hotel);
     }
 
 }
