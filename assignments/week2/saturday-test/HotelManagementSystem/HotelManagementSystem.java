@@ -12,7 +12,7 @@ public class HotelManagementSystem {
     // use to stor single instance of hotel mangement system ( singletong design ) as hotel system can be only one for all type of users.
     private static HotelManagementSystem instanceOfHotelManagementSystem = null;
 
-    private HotelDatabase db ;
+    private HotelDatabase db;
 
     // making constructor private to strict making more then one object of the hotel management system
     private HotelManagementSystem(){
