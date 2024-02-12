@@ -1,0 +1,8 @@
+24-02-09T02:02:05.984  INFO utils.middleware.log_incoming_request - get_all_user - startnam
+24-02-09T02:02:05.990 DEBUG service.todo_service - Getting users with skip 0 and limit 100nam
+24-02-09T02:02:05.990 DEBUG repository.db_utils - Getting users with skip 0 and limit 100nam
+24-02-09T02:02:06.012  INFO utils.middleware.log_incoming_request - get_all_user - end - 27.32msnam
+24-02-09T02:02:59.460  INFO utils.middleware.log_incoming_request - read_all - startnam
+24-02-09T02:02:59.464 DEBUG service.todo_service - Getting tasks for user with id 1 with skip 0 and limit 100nam
+24-02-09T02:02:59.464 DEBUG repository.db_utils - Getting tasks for user with id 1 with skip 0 and limit 100nam
+24-02-09T02:02:59.475  INFO utils.middleware.log_incoming_request - read_all - end - 14.51msnam
